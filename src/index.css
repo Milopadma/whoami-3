@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@300;400&family=DM+Mono:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Keep any custom CSS below these directives */
