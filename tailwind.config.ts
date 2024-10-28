@@ -5,8 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'heading': ['Schibsted Grotesk', 'sans-serif'],
-        'mono': ['DM Mono', 'monospace'],
+        heading: ['"Schibsted Grotesk"', "sans-serif"],
+        mono: ['"DM Mono"', "monospace"],
       },
     },
   },

@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@300;400&family=DM+Mono:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fallback font-family declaration */
+.font-heading {
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+
+.font-mono {
+  font-family: "DM Mono", monospace;
+}
 
 /* Keep any custom CSS below these directives */
