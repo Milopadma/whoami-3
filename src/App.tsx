@@ -312,7 +312,7 @@ const App: FC = () => {
           <span className="text-orange-600">past year</span>
         </p>
 
-        <div className="grid grid-cols-2 gap-12 pb-24 mx-48">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pb-24 mx-8 sm:mx-48">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -407,7 +407,7 @@ const App: FC = () => {
       </section>
 
       {/* separator line */}
-      <div className="mx-auto w-[1px] h-24 bg-gradient-to-b from-neutral-200 to-transparent" />
+      <div className="mx-auto w-[1px] h-24 bg-gradient-to-b from-neutral-200 to-transparent pb-72" />
     </body>
   );
 };
