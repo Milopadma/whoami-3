@@ -1,0 +1,9 @@
+{
+  "buildCommand": "curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/vercel/.deno sh && /vercel/.deno/bin/deno task build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "env": {
+    "DENO_DIR": "/vercel/.deno"
+  }
+}

@@ -4,7 +4,6 @@ import { type FC, useRef, useState, useEffect } from "react";
 import { type Project } from "./types/ProjectTypes.ts";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ProjectDrawer from "./components/ProjectDrawer.tsx";
 import {
   Drawer,
   DrawerTrigger,
@@ -21,7 +20,7 @@ const projects: Project[] = [
   {
     title: "Custom Framer Component #1",
     duration: "2 hours",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Framer", "React", "TypeScript", "GSAP"],
     description:
       "A reusable Framer Motion component library with complex animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
@@ -321,17 +320,59 @@ const App: FC = () => {
               onClick={() => setSelectedProject(project)}
             >
               <div className="aspect-square border border-neutral-200 p-4">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="h-full w-full object-cover"
-                />
+                <Drawer>
+                  <DrawerTrigger>
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="h-full w-full object-cover"
+                    />
+                  </DrawerTrigger>
+                  <DrawerContent>
+                    <div className="mx-auto w-full max-w-4xl px-6">
+                      <DrawerHeader className="pt-8">
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="h-full w-full max-h-[400px] max-w-[400px] object-cover"
+                        />
+                        <DrawerTitle className="font-heading text-3xl tracking-[-0.07em] text-neutral-950">
+                          {project.title}
+                        </DrawerTitle>
+                        <DrawerDescription className="text-sm tracking-tighter text-orange-600">
+                          This took {project.duration} to complete
+                        </DrawerDescription>
+                        {/* tech stack */}
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="rounded-full border border-neutral-200 px-4 py-1.5 text-xs tracking-tighter text-neutral-700"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <DrawerDescription className="text-sm tracking-tighter text-neutral-700">
+                          {project.description}
+                        </DrawerDescription>
+                        <DrawerFooter>
+                          <DrawerClose>
+                            <a className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600 hover:cursor-pointer">
+                              Close
+                            </a>
+                          </DrawerClose>
+                        </DrawerFooter>
+                      </DrawerHeader>
+                    </div>
+                  </DrawerContent>
+                </Drawer>
               </div>
-              <div className="text-left">
+              <div className="text-center">
                 <p className="text-sm tracking-tighter text-neutral-950">
                   {project.title}
                 </p>
-                <p className="text-left text-xs tracking-tighter text-orange-600">
+                <p className="text-xs tracking-tighter text-orange-600">
                   {project.duration}
                 </p>
               </div>
