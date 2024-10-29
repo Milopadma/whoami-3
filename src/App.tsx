@@ -329,7 +329,7 @@ const App: FC = () => {
                     />
                   </DrawerTrigger>
                   <DrawerContent>
-                    <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6">
+                    <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6 overflow-y-scroll">
                       <DrawerHeader className="pt-8 flex flex-col items-center justify-center">
                         <div className="flex flex-row gap-4 overflow-scroll">
                           {project.images.map((image, i) => (
@@ -348,7 +348,7 @@ const App: FC = () => {
                           This took {project.duration} to complete
                         </DrawerDescription>
                         {/* tech stack */}
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 justify-center items-center">
                           {project.techStack.map((tech, i) => (
                             <span
                               key={i}
