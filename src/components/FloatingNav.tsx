@@ -16,7 +16,7 @@ const FloatingNav: FC<FloatingNavProps> = ({ visible }: FloatingNavProps) => {
           Something with software?
         </p>
         <a
-          href="#quote"
+          href="https://wa.me/6285121020001?text=Hello%2C%20I%20need%20a%20quote%20for%20your%20services"
           className="text-sm tracking-tighter text-orange-600 hover:border-b hover:border-orange-600"
         >
           Get a Quote →

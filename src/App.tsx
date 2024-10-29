@@ -398,7 +398,7 @@ const App: FC = () => {
             your problem
           </p>
           <a
-            href="#quote"
+            href="https://wa.me/6285121020001?text=Hello%2C%20I%20need%20a%20quote%20for%20your%20services"
             className="mt-8 inline-block font-mono border-b tracking-[-0.08em] border-neutral-950 text-xl hover:text-orange-600 hover:border-orange-600"
           >
             Get a Quote
