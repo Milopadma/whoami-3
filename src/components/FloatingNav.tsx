@@ -7,7 +7,7 @@ interface FloatingNavProps {
 const FloatingNav: FC<FloatingNavProps> = ({ visible }: FloatingNavProps) => {
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transform transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-40 transform transition-all duration-300 ease-in-out${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -26,4 +26,4 @@ const FloatingNav: FC<FloatingNavProps> = ({ visible }: FloatingNavProps) => {
   );
 };
 
-export default FloatingNav; 
+export default FloatingNav;

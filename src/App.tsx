@@ -20,81 +20,81 @@ const projects: Project[] = [
   {
     title: "Custom Framer Component #1",
     duration: "2 hours",
-    imageUrl: "/chair.png",
-    techStack: ["Framer", "React", "TypeScript", "GSAP"],
+    imageUrl: "/mail.webp",
+    techStack: ["Framer", "React", "TypeScript", "Framer Motion"],
     description:
       "A reusable Framer Motion component library with complex animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/mail.webp"],
     repository: "https://github.com/example/framer-components",
   },
   {
     title: "Beauty Salon Booking App",
     duration: "3 months",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind"],
     description:
       "Full-featured salon management system with real-time booking, staff scheduling, and automated reminders. Includes customer management and analytics dashboard.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     link: "https://salon-app.example.com",
   },
   {
     title: "Property Listing Website",
     duration: "3 months",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Mapbox"],
     description:
       "Real estate platform with advanced search filters, virtual tours, and interactive maps. Integrated with multiple listing services and automated property valuation.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     link: "https://property-finder.example.com",
   },
   {
     title: "ICP Blockchain Smart Contracts",
     duration: "2 weeks",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Motoko", "Internet Computer", "TypeScript", "DFX"],
     description:
       "Decentralized application smart contracts for the Internet Computer Protocol. Implements secure token transfers, governance, and cross-canister calls.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     repository: "https://github.com/example/icp-contracts",
   },
   {
     title: "3D Model Loader SwiftUI MVP",
     duration: "2 hours",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Swift", "SwiftUI", "SceneKit", "ARKit"],
     description:
       "iOS application for loading and viewing 3D models with AR capabilities. Features include model manipulation, texturing, and real-world placement.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     repository: "https://github.com/example/swift-3d-loader",
   },
   {
     title: "Next 3 UI Layout Slicing",
     duration: "2 weeks",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     description:
       "Modern UI component library built with Next.js 13. Includes complex layouts, animations, and responsive design patterns.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     link: "https://ui-components.example.com",
   },
   {
     title: "Calorie Tracking App MVP",
     duration: "1 week",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["React Native", "TypeScript", "Firebase", "Redux"],
     description:
       "Cross-platform mobile app for tracking daily nutrition and exercise. Features include barcode scanning, meal planning, and progress visualization.",
-    images: ["/chair.jpg", "/chair.jpg", "/chair.jpg"],
+    images: ["/chair.png", "/chair.png", "/chair.png"],
     link: "https://calorie-tracker.example.com",
   },
   {
     title: "...and many more",
     duration: "???",
-    imageUrl: "/chair.jpg",
+    imageUrl: "/chair.png",
     techStack: ["Various", "Technologies", "Used"],
     description:
       "More projects available upon request. Each project demonstrates different technical skills and problem-solving approaches.",
-    images: ["/chair.jpg"],
+    images: ["/chair.png"],
   },
 ];
 
@@ -312,7 +312,7 @@ const App: FC = () => {
           <span className="text-orange-600">past year</span>
         </p>
 
-        <div className="grid grid-cols-2 gap-12 pb-24">
+        <div className="grid grid-cols-2 gap-12 pb-24 mx-48">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -325,17 +325,22 @@ const App: FC = () => {
                     <img
                       src={project.imageUrl}
                       alt={project.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
                     />
                   </DrawerTrigger>
                   <DrawerContent>
-                    <div className="mx-auto w-full max-w-4xl px-6">
-                      <DrawerHeader className="pt-8">
-                        <img
-                          src={project.imageUrl}
-                          alt={project.title}
-                          className="h-full w-full max-h-[400px] max-w-[400px] object-cover"
-                        />
+                    <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6">
+                      <DrawerHeader className="pt-8 flex flex-col items-center justify-center">
+                        <div className="flex flex-row gap-4 overflow-scroll">
+                          {project.images.map((image, i) => (
+                            <img
+                              key={i}
+                              src={image}
+                              alt={project.title}
+                              className="h-full w-full max-h-[400px] max-w-[400px] object-cover"
+                            />
+                          ))}
+                        </div>
                         <DrawerTitle className="font-heading text-3xl tracking-[-0.07em] text-neutral-950">
                           {project.title}
                         </DrawerTitle>
@@ -353,12 +358,12 @@ const App: FC = () => {
                             </span>
                           ))}
                         </div>
-                        <DrawerDescription className="text-sm tracking-tighter text-neutral-700">
+                        <DrawerDescription className="text-sm tracking-tighter text-neutral-700 text-center max-w-md">
                           {project.description}
                         </DrawerDescription>
                         <DrawerFooter>
                           <DrawerClose>
-                            <a className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600 hover:cursor-pointer">
+                            <a className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600 hover:cursor-pointer border-b border-neutral-950">
                               Close
                             </a>
                           </DrawerClose>
