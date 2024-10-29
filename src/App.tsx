@@ -215,7 +215,7 @@ const App: FC = () => {
           </p>
           <a
             ref={ctaRef}
-            href="#quote"
+            href="https://wa.me/6285121020001?text=Hello%2C%20I%20need%20a%20quote%20for%20your%20services"
             className="cta mt-8 inline-block border-b border-neutral-950 text-xl tracking-[-0.08em] hover:text-orange-600 hover:border-orange-600"
           >
             Get a Quote
