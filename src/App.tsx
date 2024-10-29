@@ -18,6 +18,16 @@ import FloatingNav from "./components/FloatingNav.tsx";
 
 const projects: Project[] = [
   {
+    title: "YouTube Channel Component",
+    duration: "2 hours",
+    imageUrl: "/youtube.webp",
+    techStack: ["Framer", "React", "TypeScript", "YouTube API"],
+    description:
+      "Custom Framer component that dynamically fetches and displays YouTube channel content. Features responsive video thumbnails, titles, and smooth hover animations.",
+    images: ["/youtube.webp"],
+    repository: "https://github.com/milopadma",
+  },
+  {
     title: "Custom Framer Component #1",
     duration: "2 hours",
     imageUrl: "/mail.webp",
@@ -25,7 +35,7 @@ const projects: Project[] = [
     description:
       "A reusable Framer Motion component library with complex animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
     images: ["/mail.webp"],
-    repository: "https://github.com/example/framer-components",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "Beauty Salon Booking App",
@@ -35,7 +45,7 @@ const projects: Project[] = [
     description:
       "Full-featured salon management system with real-time booking, staff scheduling, and automated reminders. Includes customer management and analytics dashboard.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    link: "https://salon-app.example.com",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "Property Listing Website",
@@ -45,7 +55,7 @@ const projects: Project[] = [
     description:
       "Real estate platform with advanced search filters, virtual tours, and interactive maps. Integrated with multiple listing services and automated property valuation.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    link: "https://property-finder.example.com",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "ICP Blockchain Smart Contracts",
@@ -55,7 +65,7 @@ const projects: Project[] = [
     description:
       "Decentralized application smart contracts for the Internet Computer Protocol. Implements secure token transfers, governance, and cross-canister calls.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/example/icp-contracts",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "3D Model Loader SwiftUI MVP",
@@ -65,7 +75,7 @@ const projects: Project[] = [
     description:
       "iOS application for loading and viewing 3D models with AR capabilities. Features include model manipulation, texturing, and real-world placement.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/example/swift-3d-loader",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "Next 3 UI Layout Slicing",
@@ -75,7 +85,7 @@ const projects: Project[] = [
     description:
       "Modern UI component library built with Next.js 13. Includes complex layouts, animations, and responsive design patterns.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    link: "https://ui-components.example.com",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "Calorie Tracking App MVP",
@@ -85,7 +95,7 @@ const projects: Project[] = [
     description:
       "Cross-platform mobile app for tracking daily nutrition and exercise. Features include barcode scanning, meal planning, and progress visualization.",
     images: ["/chair.png", "/chair.png", "/chair.png"],
-    link: "https://calorie-tracker.example.com",
+    repository: "https://github.com/milopadma",
   },
   {
     title: "...and many more",
