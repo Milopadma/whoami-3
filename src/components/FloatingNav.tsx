@@ -13,7 +13,7 @@ const FloatingNav: FC<FloatingNavProps> = ({ visible }: FloatingNavProps) => {
     >
       <div className="mx-auto flex h-16 max-w-4xl items-center justify-between border-b border-neutral-200 bg-neutral-50/80 px-6 backdrop-blur-sm">
         <p className="font-heading text-lg tracking-[-0.07em] text-neutral-950">
-          Something with software?
+          Let's talk about your project
         </p>
         <a
           href="https://wa.me/6285121020001?text=Hello%2C%20I%20need%20a%20quote%20for%20your%20services"

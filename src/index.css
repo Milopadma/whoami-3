@@ -13,4 +13,8 @@
   font-family: "DM Mono", monospace;
 }
 
+html, body {
+  background-color: #fafafa;
+}
+
 /* Keep any custom CSS below these directives */

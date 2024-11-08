@@ -5,6 +5,6 @@ export interface Project {
   techStack: string[];
   description: string;
   images: string[];
-  link?: string;
   repository?: string;
+  liveProject?: string;
 }

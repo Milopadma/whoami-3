@@ -18,7 +18,38 @@ import FloatingNav from "./components/FloatingNav.tsx";
 
 const projects: Project[] = [
   {
-    title: "YouTube Channel Component",
+    title: "Nuxt 3 UI Layout Slicing",
+    duration: "1 week",
+    imageUrl: "/marechalverchetti_portfolio.webp",
+    techStack: ["Vue", "Nuxt 3", "TypeScript", "Tailwind", "GSAP Animation"],
+    description:
+      "Modern application built with Nuxt 3. Includes complex layouts, animations, and responsive design patterns. An experimental project to explore Nuxt 3 capabilities.",
+    images: ["/marechalverchetti_portfolio.webp"],
+    repository: "https://github.com/Milopadma/franklineco-fleava",
+    liveProject: "https://franklineco-fleava.vercel.app/",
+  },
+  {
+    title: "Property Listing Website",
+    duration: "3 months",
+    imageUrl: "/blirumah_portfolio.webp",
+    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Mapbox"],
+    description:
+      "Real estate platform with advanced search filters, virtual tours, and interactive maps. Integrated with multiple listing services and automated property valuation.",
+    images: ["/blirumah_portfolio.webp"],
+    liveProject: "https://blirumah-alpha.milopadma.com",
+  },
+  {
+    title: "ICP Blockchain Smart Contracts",
+    duration: "4 weeks",
+    imageUrl: "Image coming soon...",
+    techStack: ["Motoko", "Internet Computer", "TypeScript", "DFX"],
+    description:
+      "Decentralized application smart contracts for the Internet Computer Protocol. Implementing secure group functionality for medical records, kyc-verification, and admin roles.",
+    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
+    repository: "https://github.com/baliola/medblock/",
+  },
+  {
+    title: "Custom Framer YouTube Channel Component",
     duration: "2 hours",
     imageUrl: "/youtube.webp",
     techStack: ["Framer", "React", "TypeScript", "YouTube API"],
@@ -28,7 +59,7 @@ const projects: Project[] = [
     repository: "https://github.com/milopadma",
   },
   {
-    title: "Custom Framer Component #1",
+    title: "Custom Framer Mail Component",
     duration: "2 hours",
     imageUrl: "/mail.webp",
     techStack: ["Framer", "React", "TypeScript", "Framer Motion"],
@@ -39,72 +70,43 @@ const projects: Project[] = [
   },
   {
     title: "Beauty Salon Booking App",
-    duration: "3 months",
-    imageUrl: "/chair.png",
+    duration: "In Progress...",
+    imageUrl: "Image coming soon...",
     techStack: ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind"],
     description:
       "Full-featured salon management system with real-time booking, staff scheduling, and automated reminders. Includes customer management and analytics dashboard.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/milopadma",
-  },
-  {
-    title: "Property Listing Website",
-    duration: "3 months",
-    imageUrl: "/chair.png",
-    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Mapbox"],
-    description:
-      "Real estate platform with advanced search filters, virtual tours, and interactive maps. Integrated with multiple listing services and automated property valuation.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/milopadma",
-  },
-  {
-    title: "ICP Blockchain Smart Contracts",
-    duration: "2 weeks",
-    imageUrl: "/chair.png",
-    techStack: ["Motoko", "Internet Computer", "TypeScript", "DFX"],
-    description:
-      "Decentralized application smart contracts for the Internet Computer Protocol. Implements secure token transfers, governance, and cross-canister calls.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
+    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
     repository: "https://github.com/milopadma",
   },
   {
     title: "3D Model Loader SwiftUI MVP",
     duration: "2 hours",
-    imageUrl: "/chair.png",
+    imageUrl: "Image coming soon...",
     techStack: ["Swift", "SwiftUI", "SceneKit", "ARKit"],
     description:
-      "iOS application for loading and viewing 3D models with AR capabilities. Features include model manipulation, texturing, and real-world placement.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/milopadma",
+      "iOS application for loading and viewing 3D models with AR capabilities. Features include model loading, viewing and real-world placement.",
+    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
+    repository: "https://github.com/Milopadma/inventory",
   },
-  {
-    title: "Next 3 UI Layout Slicing",
-    duration: "2 weeks",
-    imageUrl: "/chair.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    description:
-      "Modern UI component library built with Next.js 13. Includes complex layouts, animations, and responsive design patterns.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
-    repository: "https://github.com/milopadma",
-  },
+
   {
     title: "Calorie Tracking App MVP",
     duration: "1 week",
-    imageUrl: "/chair.png",
+    imageUrl: "Image coming soon...",
     techStack: ["React Native", "TypeScript", "Firebase", "Redux"],
     description:
       "Cross-platform mobile app for tracking daily nutrition and exercise. Features include barcode scanning, meal planning, and progress visualization.",
-    images: ["/chair.png", "/chair.png", "/chair.png"],
+    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
     repository: "https://github.com/milopadma",
   },
   {
     title: "...and many more",
     duration: "???",
-    imageUrl: "/chair.png",
+    imageUrl: "Image coming soon...",
     techStack: ["Various", "Technologies", "Used"],
     description:
       "More projects available upon request. Each project demonstrates different technical skills and problem-solving approaches.",
-    images: ["/chair.png"],
+    images: ["Image coming soon..."],
   },
 ];
 
@@ -113,6 +115,7 @@ const App: FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showFloatingNav, setShowFloatingNav] = useState(false);
   const ctaRef = useRef<HTMLAnchorElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -329,36 +332,80 @@ const App: FC = () => {
               className="space-y-2 cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="aspect-square border border-neutral-200 p-4">
+              {/* Fixed aspect ratio container */}
+              <div className="aspect-square border border-neutral-200 p-4 relative">
                 <Drawer>
-                  <DrawerTrigger>
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
-                    />
+                  <DrawerTrigger className="w-full h-full">
+                    {project.imageUrl === "Image coming soon..." ? (
+                      <div className="absolute inset-0 m-4 flex items-center justify-center bg-neutral-100">
+                        <p className="text-sm tracking-tighter text-neutral-500">
+                          Image coming soon...
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 m-4">
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="w-full h-full object-contain hover:scale-105 transition-all duration-300"
+                        />
+                      </div>
+                    )}
                   </DrawerTrigger>
                   <DrawerContent>
                     <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6 overflow-y-scroll">
                       <DrawerHeader className="pt-8 flex flex-col items-center justify-center">
-                        <div className="flex flex-row gap-4 overflow-scroll">
-                          {project.images.map((image, i) => (
-                            <img
-                              key={i}
-                              src={image}
-                              alt={project.title}
-                              className="h-full w-full max-h-[400px] max-w-[400px] object-cover"
-                            />
-                          ))}
+                        <div className="relative w-[400px] h-[400px] overflow-hidden">
+                          <div className="flex absolute left-0 top-0" ref={(el) => {
+                            if (el && project.images.length > 1) {
+                              // clone the images for seamless loop
+                              const images = [...project.images, ...project.images];
+                              
+                              // reset any existing animation
+                              gsap.killTweensOf(el);
+                              
+                              // calculate total width
+                              const totalWidth = 400 * project.images.length;
+                              
+                              gsap.to(el, {
+                                x: -totalWidth,
+                                duration: project.images.length * 3,
+                                ease: "none",
+                                repeat: -1,
+                                paused: false,
+                              });
+                            }
+                          }}>
+                            {/* double the images for seamless loop */}
+                            {[...project.images, ...project.images].map((image, idx) => (
+                              <div key={idx} className="w-[400px] h-[400px] flex-shrink-0">
+                                {image === "Image coming soon..." ? (
+                                  <div className="h-full w-full flex items-center justify-center bg-neutral-100">
+                                    <p className="text-sm tracking-tighter text-neutral-500">
+                                      Image coming soon...
+                                    </p>
+                                  </div>
+                                ) : (
+                                  <div className="h-full w-full">
+                                    <img
+                                      src={image}
+                                      alt={`${project.title} - image ${(idx % project.images.length) + 1}`}
+                                      className="h-full w-full object-contain"
+                                    />
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <DrawerTitle className="font-heading text-3xl tracking-[-0.07em] text-neutral-950">
+                        <DrawerTitle className="font-heading text-3xl tracking-[-0.07em] text-neutral-950 pt-4">
                           {project.title}
                         </DrawerTitle>
                         <DrawerDescription className="text-sm tracking-tighter text-orange-600">
                           This took {project.duration} to complete
                         </DrawerDescription>
                         {/* tech stack */}
-                        <div className="flex flex-wrap gap-2 justify-center items-center">
+                        <div className="flex flex-wrap gap-2 justify-center items-center pt-2">
                           {project.techStack.map((tech, i) => (
                             <span
                               key={i}
@@ -368,9 +415,34 @@ const App: FC = () => {
                             </span>
                           ))}
                         </div>
-                        <DrawerDescription className="text-sm tracking-tighter text-neutral-700 text-center max-w-md">
+                        <DrawerDescription className="text-sm tracking-tighter text-neutral-700 text-center max-w-md pt-2">
                           {project.description}
                         </DrawerDescription>
+
+                        {/* repository and live project links */}
+                        <div className="flex gap-4 mt-4">
+                          {project.repository && (
+                            <a 
+                              href={project.repository}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600"
+                            >
+                              View Repository
+                            </a>
+                          )}
+                          {project.liveProject && (
+                            <a 
+                              href={project.liveProject}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600"
+                            >
+                              View Live Project
+                            </a>
+                          )}
+                        </div>
+
                         <DrawerFooter>
                           <DrawerClose>
                             <a className="text-sm tracking-tighter text-neutral-950 hover:text-orange-600 hover:cursor-pointer border-b border-neutral-950">
