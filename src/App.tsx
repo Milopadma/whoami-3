@@ -32,9 +32,9 @@ const projects: Project[] = [
     title: "Property Listing Website",
     duration: "3 months",
     imageUrl: "/blirumah_portfolio.webp",
-    techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Mapbox"],
+    techStack: ["React", "Next.js", "PostgreSQL", "Supabase"],
     description:
-      "Real estate platform with advanced search filters, virtual tours, and interactive maps. Integrated with multiple listing services and automated property valuation.",
+      "Real estate platform with advanced search filters, and interactive maps. Integrated with a listing service.",
     images: ["/blirumah_portfolio.webp"],
     liveProject: "https://blirumah-alpha.milopadma.com",
   },
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "ICP Blockchain Smart Contracts",
     duration: "4 weeks",
     imageUrl: "Image coming soon...",
-    techStack: ["Motoko", "Internet Computer", "TypeScript", "DFX"],
+    techStack: ["Internet Computer", "Rust", "DFX"],
     description:
       "Decentralized application smart contracts for the Internet Computer Protocol. Implementing secure group functionality for medical records, kyc-verification, and admin roles.",
     images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
@@ -62,9 +62,9 @@ const projects: Project[] = [
     title: "Custom Framer Mail Component",
     duration: "2 hours",
     imageUrl: "/mail.webp",
-    techStack: ["Framer", "React", "TypeScript", "Framer Motion"],
+    techStack: ["Framer", "React", "TypeScript", "Framer Motion", "NocoDB"],
     description:
-      "A reusable Framer Motion component library with complex animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
+      "A reusable Framer Motion component with animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
     images: ["/mail.webp"],
     repository: "https://github.com/milopadma",
   },
@@ -72,7 +72,7 @@ const projects: Project[] = [
     title: "Beauty Salon Booking App",
     duration: "In Progress...",
     imageUrl: "Image coming soon...",
-    techStack: ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind"],
+    techStack: ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind", "Supabase"],
     description:
       "Full-featured salon management system with real-time booking, staff scheduling, and automated reminders. Includes customer management and analytics dashboard.",
     images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
@@ -84,7 +84,7 @@ const projects: Project[] = [
     imageUrl: "Image coming soon...",
     techStack: ["Swift", "SwiftUI", "SceneKit", "ARKit"],
     description:
-      "iOS application for loading and viewing 3D models with AR capabilities. Features include model loading, viewing and real-world placement.",
+      "iOS SwiftUI application for loading and viewing 3D models with AR capabilities. Features include model loading, viewing and real-world placement.",
     images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
     repository: "https://github.com/Milopadma/inventory",
   },
@@ -93,9 +93,9 @@ const projects: Project[] = [
     title: "Calorie Tracking App MVP",
     duration: "1 week",
     imageUrl: "Image coming soon...",
-    techStack: ["React Native", "TypeScript", "Firebase", "Redux"],
+    techStack: ["React Native", "TypeScript", "Supabase"],
     description:
-      "Cross-platform mobile app for tracking daily nutrition and exercise. Features include barcode scanning, meal planning, and progress visualization.",
+      "Cross-platform mobile app for tracking daily nutrition and exercise. Features planned include barcode scanning, meal planning, and progress visualization.",
     images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
     repository: "https://github.com/milopadma",
   },
