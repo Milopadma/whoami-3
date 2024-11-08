@@ -45,7 +45,11 @@ const projects: Project[] = [
     techStack: ["Internet Computer", "Rust", "DFX"],
     description:
       "Decentralized application smart contracts for the Internet Computer Protocol. Implementing secure group functionality for medical records, kyc-verification, and admin roles.",
-    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
+    images: [
+      "Image coming soon...",
+      "Image coming soon...",
+      "Image coming soon...",
+    ],
     repository: "https://github.com/baliola/medblock/",
   },
   {
@@ -56,7 +60,6 @@ const projects: Project[] = [
     description:
       "Custom Framer component that dynamically fetches and displays YouTube channel content. Features responsive video thumbnails, titles, and smooth hover animations.",
     images: ["/youtube.webp"],
-    repository: "https://github.com/milopadma",
   },
   {
     title: "Custom Framer Mail Component",
@@ -66,17 +69,26 @@ const projects: Project[] = [
     description:
       "A reusable Framer Motion component with animations and interactions. Features include gesture controls, smooth transitions, and responsive design patterns.",
     images: ["/mail.webp"],
-    repository: "https://github.com/milopadma",
   },
   {
     title: "Beauty Salon Booking App",
     duration: "In Progress...",
     imageUrl: "Image coming soon...",
-    techStack: ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind", "Supabase"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "tRPC",
+      "Tailwind",
+      "Supabase",
+    ],
     description:
       "Full-featured salon management system with real-time booking, staff scheduling, and automated reminders. Includes customer management and analytics dashboard.",
-    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
-    repository: "https://github.com/milopadma",
+    images: [
+      "Image coming soon...",
+      "Image coming soon...",
+      "Image coming soon...",
+    ],
   },
   {
     title: "3D Model Loader SwiftUI MVP",
@@ -85,7 +97,11 @@ const projects: Project[] = [
     techStack: ["Swift", "SwiftUI", "SceneKit", "ARKit"],
     description:
       "iOS SwiftUI application for loading and viewing 3D models with AR capabilities. Features include model loading, viewing and real-world placement.",
-    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
+    images: [
+      "Image coming soon...",
+      "Image coming soon...",
+      "Image coming soon...",
+    ],
     repository: "https://github.com/Milopadma/inventory",
   },
 
@@ -96,17 +112,20 @@ const projects: Project[] = [
     techStack: ["React Native", "TypeScript", "Supabase"],
     description:
       "Cross-platform mobile app for tracking daily nutrition and exercise. Features planned include barcode scanning, meal planning, and progress visualization.",
-    images: ["Image coming soon...", "Image coming soon...", "Image coming soon..."],
-    repository: "https://github.com/milopadma",
+    images: [
+      "Image coming soon...",
+      "Image coming soon...",
+      "Image coming soon...",
+    ],
   },
   {
     title: "...and many more",
     duration: "???",
-    imageUrl: "Image coming soon...",
+    imageUrl: "Your Project Here",
     techStack: ["Various", "Technologies", "Used"],
     description:
       "More projects available upon request. Each project demonstrates different technical skills and problem-solving approaches.",
-    images: ["Image coming soon..."],
+    images: ["Your Project Here"],
   },
 ];
 
@@ -338,8 +357,14 @@ const App: FC = () => {
                   <DrawerTrigger className="w-full h-full">
                     {project.imageUrl === "Image coming soon..." ? (
                       <div className="absolute inset-0 m-4 flex items-center justify-center bg-neutral-100">
-                        <p className="text-sm tracking-tighter text-neutral-500">
+                        <p className="text-sm tracking-tighter text-neutral-500 font-heading">
                           Image coming soon...
+                        </p>
+                      </div>
+                    ) : project.imageUrl === "Your Project Here" ? (
+                      <div className="absolute inset-0 m-4 flex items-center justify-center bg-neutral-100">
+                        <p className="text-sm tracking-tighter text-neutral-500 font-heading">
+                          Your project here...
                         </p>
                       </div>
                     ) : (
@@ -356,53 +381,72 @@ const App: FC = () => {
                     <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6 overflow-y-scroll">
                       <DrawerHeader className="pt-8 flex flex-col items-center justify-center">
                         <div className="relative w-[400px] h-[400px] overflow-hidden">
-                          <div className="flex absolute left-0 top-0" ref={(el) => {
-                            if (el && project.images.length > 1) {
-                              // clone the images for seamless loop
-                              const images = [...project.images, ...project.images];
-                              
-                              // reset any existing animation
-                              gsap.killTweensOf(el);
-                              
-                              // calculate total width
-                              const totalWidth = 400 * project.images.length;
-                              
-                              gsap.to(el, {
-                                x: -totalWidth,
-                                duration: project.images.length * 3,
-                                ease: "none",
-                                repeat: -1,
-                                paused: false,
-                              });
-                            }
-                          }}>
+                          <div
+                            className="flex absolute left-0 top-0"
+                            ref={(el) => {
+                              if (el && project.images.length > 1) {
+                                // clone the images for seamless loop
+                                const images = [
+                                  ...project.images,
+                                  ...project.images,
+                                ];
+
+                                // reset any existing animation
+                                gsap.killTweensOf(el);
+
+                                // calculate total width
+                                const totalWidth = 400 * project.images.length;
+
+                                gsap.to(el, {
+                                  x: -totalWidth,
+                                  duration: project.images.length * 3,
+                                  ease: "none",
+                                  repeat: -1,
+                                  paused: false,
+                                });
+                              }
+                            }}
+                          >
                             {/* double the images for seamless loop */}
-                            {[...project.images, ...project.images].map((image, idx) => (
-                              <div key={idx} className="w-[400px] h-[400px] flex-shrink-0">
-                                {image === "Image coming soon..." ? (
-                                  <div className="h-full w-full flex items-center justify-center bg-neutral-100">
-                                    <p className="text-sm tracking-tighter text-neutral-500">
-                                      Image coming soon...
-                                    </p>
-                                  </div>
-                                ) : (
-                                  <div className="h-full w-full">
-                                    <img
-                                      src={image}
-                                      alt={`${project.title} - image ${(idx % project.images.length) + 1}`}
-                                      className="h-full w-full object-contain"
-                                    />
-                                  </div>
-                                )}
-                              </div>
-                            ))}
+                            {[...project.images, ...project.images].map(
+                              (image, idx) => (
+                                <div
+                                  key={idx}
+                                  className="w-[400px] h-[400px] flex-shrink-0"
+                                >
+                                  {image === "Image coming soon..." ? (
+                                    <div className="h-full w-full flex items-center justify-center bg-neutral-100">
+                                      <p className="text-sm tracking-tighter text-neutral-500">
+                                        Image coming soon...
+                                      </p>
+                                    </div>
+                                  ) : image === "Your Project Here" ? (
+                                    <div className="h-full w-full flex items-center justify-center bg-neutral-100">
+                                      <p className="text-sm tracking-tighter text-neutral-500">
+                                        Your project here...
+                                      </p>
+                                    </div>
+                                  ) : (
+                                    <div className="h-full w-full">
+                                      <img
+                                        src={image}
+                                        alt={`${project.title} - image ${
+                                          (idx % project.images.length) + 1
+                                        }`}
+                                        className="h-full w-full object-contain"
+                                      />
+                                    </div>
+                                  )}
+                                </div>
+                              )
+                            )}
                           </div>
                         </div>
                         <DrawerTitle className="font-heading text-3xl tracking-[-0.07em] text-neutral-950 pt-4">
                           {project.title}
                         </DrawerTitle>
                         <DrawerDescription className="text-sm tracking-tighter text-orange-600">
-                          This took {project.duration} to complete
+                          {project.duration === "In Progress..." ? "In Progress" : `This took ${project.duration} to complete`}
                         </DrawerDescription>
                         {/* tech stack */}
                         <div className="flex flex-wrap gap-2 justify-center items-center pt-2">
@@ -422,7 +466,7 @@ const App: FC = () => {
                         {/* repository and live project links */}
                         <div className="flex gap-4 mt-4">
                           {project.repository && (
-                            <a 
+                            <a
                               href={project.repository}
                               target="_blank"
                               rel="noopener noreferrer"
@@ -432,7 +476,7 @@ const App: FC = () => {
                             </a>
                           )}
                           {project.liveProject && (
-                            <a 
+                            <a
                               href={project.liveProject}
                               target="_blank"
                               rel="noopener noreferrer"
