@@ -36,7 +36,7 @@ const projects: Project[] = [
     description:
       "Real estate platform with advanced search filters, and interactive maps. Integrated with a listing service.",
     images: ["/blirumah_portfolio.webp"],
-    liveProject: "https://blirumah-alpha.milopadma.com",
+    liveProject: "https://blirumahproperty.com",
   },
   {
     title: "ICP Blockchain Smart Contracts",
